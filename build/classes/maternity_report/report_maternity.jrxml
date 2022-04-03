@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="9a162127-42c1-44f5-a60d-21c69e491945">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="400"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     maternity.`patientID` AS maternity_patientID,
+     maternity.`title` AS maternity_title,
+     maternity.`fname` AS maternity_fname,
+     maternity.`lname` AS maternity_lname,
+     maternity.`dob` AS maternity_dob,
+     maternity.`age` AS maternity_age,
+     maternity.`NIC` AS maternity_NIC,
+     maternity.`perm_add` AS maternity_perm_add,
+     maternity.`mar_status` AS maternity_mar_status,
+     maternity.`res_add` AS maternity_res_add,
+     maternity.`h_contact` AS maternity_h_contact,
+     maternity.`m_contact` AS maternity_m_contact,
+     maternity.`duedate` AS maternity_duedate,
+     maternity.`fam_doctor` AS maternity_fam_doctor,
+     maternity.`mat_doctor` AS maternity_mat_doctor,
+     maternity.`pediat` AS maternity_pediat,
+     maternity.`room_cat` AS maternity_room_cat,
+     maternity.`room_no` AS maternity_room_no,
+     maternity.`room_rate` AS maternity_room_rate,
+     maternity.`nok_title` AS maternity_nok_title,
+     maternity.`nok_fname` AS maternity_nok_fname,
+     maternity.`nok_lname` AS maternity_nok_lname,
+     maternity.`nok_nic` AS maternity_nok_nic,
+     maternity.`nok_relat` AS maternity_nok_relat,
+     maternity.`nok_add` AS maternity_nok_add,
+     maternity.`nok_contact` AS maternity_nok_contact,
+     maternity.`tot_amount` AS maternity_tot_amount
+FROM
+     `maternity` maternity]]>
+	</queryString>
+	<field name="maternity_patientID" class="java.lang.Integer"/>
+	<field name="maternity_fname" class="java.lang.String"/>
+	<field name="maternity_lname" class="java.lang.String"/>
+	<field name="maternity_NIC" class="java.lang.String"/>
+	<field name="maternity_room_no" class="java.lang.String"/>
+	<field name="maternity_tot_amount" class="java.lang.Double"/>
+	<group name="maternity_patientID">
+		<groupExpression><![CDATA[$F{maternity_patientID}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="143" y="13" width="657" height="24" forecolor="#000000" uuid="12dbc62c-819d-4c8e-bbfd-149de1ef0e55"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{maternity_patientID}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="97" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="0cfd65ac-61cd-4edd-adbf-044c36964085"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="30">
+				<frame>
+					<reportElement mode="Opaque" x="652" y="0" width="150" height="30" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="f1f17049-62c8-48dc-ad9f-09b94fab25e3"/>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="575" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="234" width="20" height="241" backcolor="#000000" uuid="be210210-ff6e-467e-9745-ef5f1d5ba382"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666" uuid="39ff7a8e-f0cb-4420-bde8-ccc3db405144"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="2e54554e-bec5-4026-82e9-01c8ded04604"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="2a40cf37-2f44-47ca-89c9-d2614997cb1c"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF" uuid="65f097cb-6fdf-475f-a8d4-8e2b454095be"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="eb46ebf4-bd01-4381-981f-2e42ea424877"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[SILHOUETTE TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="568" height="37" uuid="a5bee506-ab3e-48bb-b5c2-6cd48f14b5f5"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Silhouette SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666" uuid="42ad020f-2b1f-4095-a9f1-2db8f115172d"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="141" height="15" uuid="214e5edf-5edd-4455-a484-98c82100ee64"/>
+					<text><![CDATA[maternity_fname]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="141" y="0" width="141" height="15" uuid="93ffee5b-89d6-466d-8de3-f3516a4e0ae6"/>
+					<text><![CDATA[maternity_lname]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="282" y="0" width="141" height="15" uuid="f5e8d1e7-cecd-4b14-a120-e309823f5bdb"/>
+					<text><![CDATA[maternity_NIC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="423" y="0" width="141" height="15" uuid="7767f0f6-caa2-4042-a2bb-17602d63ec49"/>
+					<text><![CDATA[maternity_room_no]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="564" y="0" width="141" height="15" uuid="1c12ab5a-778e-4f12-b38e-a3c23d5612a9"/>
+					<text><![CDATA[maternity_tot_amount]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="97" y="1" width="705" height="15" uuid="70cb9d38-876d-4ddf-82e5-170858677d2c"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="141" height="15" uuid="b232470d-fdc9-480b-bbaf-82a21f696252"/>
+					<textFieldExpression><![CDATA[$F{maternity_fname}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="141" y="0" width="141" height="15" uuid="1d8871ae-d900-4444-94b0-ac0e2b2e3adb"/>
+					<textFieldExpression><![CDATA[$F{maternity_lname}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="282" y="0" width="141" height="15" uuid="72ee370c-d334-409b-9abb-043da9f5a4e9"/>
+					<textFieldExpression><![CDATA[$F{maternity_NIC}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="423" y="0" width="141" height="15" uuid="ada62588-53a1-4b38-9748-d49bea037205"/>
+					<textFieldExpression><![CDATA[$F{maternity_room_no}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="564" y="0" width="141" height="15" uuid="2fbf823f-e3e1-42e6-a031-1b667d9160df"/>
+					<textFieldExpression><![CDATA[$F{maternity_tot_amount}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1" uuid="0c7c6ff9-7cca-4ab7-ad88-25ac06c0cd97"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="824d22f6-9274-4613-8d45-1825d2906c40"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20" uuid="8acce64f-8cd8-4101-9a1d-c23f92800e93"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

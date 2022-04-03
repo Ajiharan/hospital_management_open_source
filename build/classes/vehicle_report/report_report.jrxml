@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d9a5eebe-ede3-43bd-9fad-a8e5c9aa52f0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="75"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vmaintenance.`ID` AS vmaintenance_ID,
+     vmaintenance.`Date` AS vmaintenance_Date,
+     vmaintenance.`Fuel` AS vmaintenance_Fuel,
+     vmaintenance.`Services` AS vmaintenance_Services,
+     vmaintenance.`Repairs` AS vmaintenance_Repairs,
+     vmaintenance.`Revenue_License` AS vmaintenance_Revenue_License,
+     vmaintenance.`Insurance` AS vmaintenance_Insurance,
+     vmaintenance.`Emission_test` AS vmaintenance_Emission_test
+FROM
+     `vmaintenance` vmaintenance]]>
+	</queryString>
+	<field name="vmaintenance_ID" class="java.lang.Integer"/>
+	<field name="vmaintenance_Date" class="java.sql.Date"/>
+	<field name="vmaintenance_Fuel" class="java.lang.String"/>
+	<field name="vmaintenance_Services" class="java.lang.String"/>
+	<field name="vmaintenance_Repairs" class="java.lang.String"/>
+	<field name="vmaintenance_Revenue_License" class="java.lang.String"/>
+	<field name="vmaintenance_Insurance" class="java.lang.String"/>
+	<field name="vmaintenance_Emission_test" class="java.lang.String"/>
+	<group name="vmaintenance_ID">
+		<groupExpression><![CDATA[$F{vmaintenance_ID}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#B89F7D" backcolor="#F2EBDF" uuid="1bafc475-7e04-4d22-ae95-2c4201011577"/>
+					<rectangle>
+						<reportElement mode="Opaque" x="21" y="0" width="36" height="24" backcolor="#736343" uuid="31ede438-9a94-4a3b-b4c2-9dbfacf7365a"/>
+						<graphicElement>
+							<pen lineWidth="0.0"/>
+						</graphicElement>
+					</rectangle>
+					<textField>
+						<reportElement style="SubTitle" x="68" y="0" width="755" height="24" forecolor="#736343" uuid="e2dfc697-7dd9-4ac9-b6a2-c3460e04d341"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{vmaintenance_ID}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="270" y="0" width="263" height="62" uuid="721b0566-fe8d-4518-b005-1497dc34cee2"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="e0d3dd7b-c493-4ad8-a779-b4c87c0dc2cd"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="94" width="383" height="42" uuid="d5cc5e59-66f3-4b99-8905-c4594b709443"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor purus gravida arcu aliquam mattis. Donec et nulla libero, ut varius massa. Nulla sed turpis elit. Etiam aliquet mauris a ligula hendrerit in auctor leo lobortis.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="6b7d6507-9a34-45f9-8440-d5e298935ee5"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="114" height="15" forecolor="#736343" uuid="af3c38cf-08d0-4784-aaed-4781910b0c63"/>
+				<text><![CDATA[vmaintenance_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="0" width="114" height="15" forecolor="#736343" uuid="0f731eb2-b4b3-4d9d-9232-6145cdb834a6"/>
+				<text><![CDATA[vmaintenance_Fuel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="228" y="0" width="114" height="15" forecolor="#736343" uuid="535bfe39-c326-4bfa-9bae-7c40580054a4"/>
+				<text><![CDATA[vmaintenance_Services]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="0" width="114" height="15" forecolor="#736343" uuid="91554ef2-15c1-464b-ae4a-afb4d0b5a3d3"/>
+				<text><![CDATA[vmaintenance_Repairs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="0" width="114" height="15" forecolor="#736343" uuid="187fba03-bae0-4106-8978-5d594957c665"/>
+				<text><![CDATA[vmaintenance_Revenue_License]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="570" y="0" width="114" height="15" forecolor="#736343" uuid="eede0284-8781-4146-bc08-54d1d2fb4fc4"/>
+				<text><![CDATA[vmaintenance_Insurance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="684" y="0" width="114" height="15" forecolor="#736343" uuid="eb1e2a14-0947-42cc-a655-40b4b1aac918"/>
+				<text><![CDATA[vmaintenance_Emission_test]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="9aa1572d-a5b6-49b7-9cfc-d05f3f702a5c"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="114" height="15" uuid="b8dbebf4-8f15-4f6f-b134-a33585cae672"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="114" y="0" width="114" height="15" uuid="47e58dd3-9700-4c85-86c9-046f195befeb"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Fuel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="228" y="0" width="114" height="15" uuid="81d9af54-ec2d-411d-8854-8124a1122f57"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Services}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="342" y="0" width="114" height="15" uuid="d01259da-c5c3-45b3-a2b6-aa2d6047ef67"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Repairs}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="456" y="0" width="114" height="15" uuid="15ba7d89-2b78-4e17-b9b7-56457ba74bdc"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Revenue_License}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="570" y="0" width="114" height="15" uuid="f3c5e727-4e1b-4223-a07d-4308b8932d58"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Insurance}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="684" y="0" width="114" height="15" uuid="92ee1400-b169-4a46-afb6-fbd77a59193e"/>
+					<textFieldExpression><![CDATA[$F{vmaintenance_Emission_test}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="98b62d2a-bbff-45fa-91ad-7630e434ac7c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="71ead3f4-61c3-4dc4-b3bb-550ad263ff53"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="db3f3428-a58f-4314-8acc-26bdae13e1b1"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="54f883f1-ca17-4c68-8df2-7f1375e2eadd"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="d3aa5715-57d4-425e-9159-3a245aa6dad3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

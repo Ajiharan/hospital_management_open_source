@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32c3ee21-b81a-42e3-95a0-75d2a9a0228b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     payments.`payments_id` AS payments_payments_id,
+     payments.`category` AS payments_category,
+     payments.`sub_category` AS payments_sub_category,
+     payments.`amount_in` AS payments_amount_in,
+     payments.`amount_out` AS payments_amount_out,
+     payments.`date` AS payments_date,
+     payments.`staff_id` AS payments_staff_id,
+     payments.`booking_id` AS payments_booking_id
+FROM
+     `payments` payments]]>
+	</queryString>
+	<field name="payments_payments_id" class="java.lang.Integer"/>
+	<field name="payments_category" class="java.lang.String"/>
+	<field name="payments_sub_category" class="java.lang.String"/>
+	<field name="payments_amount_in" class="java.lang.Double"/>
+	<field name="payments_amount_out" class="java.lang.Double"/>
+	<field name="payments_date" class="java.sql.Date"/>
+	<field name="payments_staff_id" class="java.lang.Integer"/>
+	<field name="payments_booking_id" class="java.lang.Integer"/>
+	<group name="payments_payments_id">
+		<groupExpression><![CDATA[$F{payments_payments_id}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#000000" uuid="6211819e-331d-4bed-8e74-cbaec56e122e"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{payments_payments_id}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="76408730-7ea0-423e-8391-c1c8499c5813"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="70a3a3e1-4f2d-4d04-bfe7-2b272e832485"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Payments Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="18d83683-fde4-4b31-8d53-b0d251339f63"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="64" height="15" uuid="c6b0b0ae-ad7b-41ba-9192-878d8ca51e1c"/>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="64" y="19" width="94" height="15" uuid="6b97644b-879e-459b-8ca7-1ed39b7a2d9a"/>
+				<text><![CDATA[Sub_category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="19" width="79" height="15" uuid="2276186f-4f2d-49c1-a142-c6c2daf93809"/>
+				<text><![CDATA[Amount_in]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="19" width="79" height="15" uuid="4d1733de-deea-4a9c-b0fa-c8eaccf653c8"/>
+				<text><![CDATA[Amount_out]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="316" y="19" width="79" height="15" uuid="3dcac388-c51a-4463-89f3-56fbd3de1f12"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="395" y="19" width="79" height="15" uuid="da876062-fc07-4aa1-a65f-c33eda34ee9b"/>
+				<text><![CDATA[Staff_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="474" y="19" width="79" height="15" uuid="48fbe360-3086-43e6-b183-54ccef46bac6"/>
+				<text><![CDATA[Booking_id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="4bc9061c-7c20-40f0-9422-300f78d1da07"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="79" height="15" uuid="f827f321-30ad-41fd-8795-87713d6ed904"/>
+				<textFieldExpression><![CDATA[$F{payments_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="79" y="0" width="79" height="15" uuid="f34ab363-7d8f-49bf-a8e1-8f5f7a59e0a7"/>
+				<textFieldExpression><![CDATA[$F{payments_sub_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="158" y="0" width="79" height="15" uuid="ffb480ee-1e94-42d9-94f7-6d8d825e9a32"/>
+				<textFieldExpression><![CDATA[$F{payments_amount_in}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="237" y="0" width="79" height="15" uuid="73d464a0-040f-455d-bce7-b90e8dac9cad"/>
+				<textFieldExpression><![CDATA[$F{payments_amount_out}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="316" y="0" width="79" height="15" uuid="e0612f95-15f8-4137-bbc1-973b92a44c64"/>
+				<textFieldExpression><![CDATA[$F{payments_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="395" y="0" width="79" height="15" uuid="625555e9-f049-45ec-b8ff-49e00e857cf7"/>
+				<textFieldExpression><![CDATA[$F{payments_staff_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="474" y="0" width="79" height="15" uuid="e0e3d7e9-1c49-4b2c-9a9f-c2abca1a621e"/>
+				<textFieldExpression><![CDATA[$F{payments_booking_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1577dac6-5b28-4eb3-8ca9-9d3489d2f75b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="d24a60ff-3d19-40d6-a08b-f5705f7348fe"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="b3998435-02cb-4d2a-8c15-d85a367a7736"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="0d2dce5d-43eb-40ee-944a-a8eecae86a99"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
